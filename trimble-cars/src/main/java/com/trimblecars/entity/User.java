@@ -22,5 +22,5 @@ public class User {
     private String email;
 
     @Enumerated(EnumType.STRING)
-    private Role role; // ✅ This must be com.trimblecars.entity.Role
+    private Role role; 
 }
