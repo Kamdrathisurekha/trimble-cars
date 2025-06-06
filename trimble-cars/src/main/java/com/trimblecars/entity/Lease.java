@@ -1,0 +1,33 @@
+package com.trimblecars.entity;
+
+
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.time.LocalDateTime;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+
+public class Lease {
+  
+	    @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private Long id;
+
+	    @ManyToOne
+	    @JoinColumn(name = "customer_id")
+	    private User customer;
+
+	    @ManyToOne
+	    @JoinColumn(name = "car_id")
+	    private Car car;
+
+	    private LocalDateTime startTime;
+
+	    private LocalDateTime endTime;
+	
+
+}
